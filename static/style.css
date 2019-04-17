@@ -1,0 +1,108 @@
+.drop-link {
+    color: inherit;
+    text-decoration: inherit;
+    display: block;
+}
+
+.drop-link:hover {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.card a {
+    text-align: center;
+}
+
+.card a:hover {
+    text-decoration: none;
+}
+
+#Login {
+    margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+#userError, #passError {
+    color: red;
+}
+
+.centered-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-list {
+  display: inline-block;
+}
+
+.card button:hover, .card button:active, .card button:focus {
+    text-decoration: none;
+}
+
+.blue {
+    color: #17a1b0;
+}
+
+.orange {
+    color: #f14d3e;
+}
+
+.bg-blue {
+    background-color: #17a1b0;
+}
+
+.outline-orange {
+    color: #f14d3e;
+    border-color: #f14d3e;
+}
+
+.outline-orange:hover {
+    color: white;
+    background-color: #f14d3e;
+}
+
+.success, .success:hover {
+    color: white;
+    background-color: #17a1b0;
+    border-color: #17a1b0;
+}
+
+.divider {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.links {
+    border: 1px solid #17a1b0;
+}
+
+.links-head {
+    border-bottom: 1px solid #17a1b0;
+}
+
+.index-image {
+    width: 10rem;
+}
+
+.flip {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.index-jumbo {
+    margin-bottom: 0;
+}

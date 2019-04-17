@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="container-fluid">
+    <div class="jumbotron index-jumbo">
+        <div class="container">
+            <h2 class="display-4 text-center pb-5">Evaluatie</h2>
+            <div class="card">
+                <div class="card-body" id="welcome">
+                    <h5 class="card-title">Welkom</h5>
+                    <p class="card-text">Kies hieronder in welk jaar u momenteel studeert.</p>
+                    <select name="year" class="form-control mb-3">
+                        <option value="1">1e jaar</option>
+                        <option value="2">2e jaar</option>
+                        <option value="3">3e jaar</option>
+                        <option value="4">4e jaar</option>
+                    </select>
+                    <a href="#" class="btn btn-primary" id="to-instructions">Ga verder</a>
+                </div>
+            </div>
+            <div class="card" style="display: none" id="instructions">
+                <div class="card-body">
+                    <h5 class="card-title">Instructies</h5>
+                    <ul>
+                        <li><p class="card-text">De test bestaat uit 20 meerkeuzevragen</p></li>
+                        <li><p class="card-text">Er is telkens één correct antwoord</p></li>
+                        <li><p class="card-text">U kunt uw antwoord <b>niet meer corrigeren</b></p></li>
+                        <li><p class="card-text">U ontvangt meteen feedback op uw antwoord</b></p></li>
+                        <li><p class="card-text">Op het einde van de test krijgt u een overzicht van uw antwoorden met hun correcties</b></p></li>
+                        <li><p class="card-text">Beantwoord alle vragen binnen 15 minuten.</b></p></li>
+                    </ul>
+                    <p class="card-text">Bent u klaar om te starten?</b></p>
+                    <a href="#" class="btn btn-primary">Ja, ga verder</a>
+                    <a href="#" class="float-right" id="back-welcome">Stap terug</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
+{% endblock %}

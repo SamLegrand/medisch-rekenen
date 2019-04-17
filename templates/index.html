@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="jumbotron index-jumbo">
+    <div class="container">
+        <h2 class="display-4 text-center">Evaluatie medisch rekenen</h2>
+        <p class="text-center">Gelieve u hieronder aan te melden.</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="card col-md-4" id="Login">
+            <article class="card-body">
+                <h4 class="card-title text-center mb-4 mt-1">Aanmelden</h4>
+                <hr>
+                <form role="form" id="LoginForm">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-user"></i> </span>
+                            </div>
+                            <input name="username" class="form-control" placeholder="Studentennummer" type="text">
+                        </div>
+                        <!-- input-group.// -->
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-envelope"></i> </span>
+                            </div>
+                            <input name="email" class="form-control" placeholder="E-mailadres" type="email">
+                        </div>
+                        <!-- input-group.// -->
+                    </div>
+                    <!-- form-group// -->
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" id="loginButton" type="submit"> Login </button>
+                    </div>
+                    <div class="form-group">
+                        <p class="text-center"><a href="#" id="adminLogin">Admin</a></p>
+                    </div>
+                    <p style="display: none" class="text-center" id="userError">Studentennummer is niet geldig.</p>
+                </form>
+                <form role="form" id="AdminForm" style="display: none">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-lock"></i> </span>
+                            </div>
+                            <input name="password" class="form-control" placeholder="******" type="password">
+                        </div>
+                        <!-- input-group.// -->
+                    </div>
+                    <!-- form-group// -->
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" id="loginButton" type="submit"> Login </button>
+                    </div>
+                    <div class="form-group">
+                        <p class="text-center"><a href="#" id="studentLogin">Student</a></p>
+                    </div>
+                    <p style="display: none" class="text-center" id="passError">Wachtwoord is niet geldig.</p>
+                </form>
+            </article>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+    <hr>
+</div>
+{% endblock %}
