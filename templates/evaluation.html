@@ -29,8 +29,51 @@
                         <li><p class="card-text">Beantwoord alle vragen binnen 15 minuten.</b></p></li>
                     </ul>
                     <p class="card-text">Bent u klaar om te starten?</b></p>
-                    <a href="#" class="btn btn-primary">Ja, ga verder</a>
+                    <a href="#" class="btn btn-primary" id="to-test">Ja, ga verder</a>
                     <a href="#" class="float-right" id="back-welcome">Stap terug</a>
+                </div>
+            </div>
+            <div class="card" style="display: none" id="evaluation">
+                <div class="card-body">
+                    <h5 class="card-title" id="question"></h5>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input choice" id="A">
+                        <label class="form-check-label" for="A" id="qA">
+                            <p></p>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input choice" id="B">
+                        <label class="form-check-label" for="B" id="qB">
+                            <p></p>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input choice" id="C">
+                        <label class="form-check-label" for="C" id="qC">
+                            <p></p>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input choice" id="D">
+                        <label class="form-check-label" for="D" id="qD">
+                            <p></p>
+                        </label>
+                    </div>
+                    <p id="timer"></p>
+                    <button class="btn btn-primary" id="proceed" style="display: none">Volgende vraag</button>
+                    <div id="score">
+                        <p class="float-right">
+                            0/14
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="display: none" id="scoreCard">
+                <div class="card-body">
+                    <h5 class="card-title">U behaalde 0/14</h5>
+                    <p class="card-text">U ontvangt zo dadelijk een e-mail met een bevestiging van uw resultaat.</p>
+                    <p class="card-text">U kan deze pagina nu sluiten.</p>
                 </div>
             </div>
         </div>

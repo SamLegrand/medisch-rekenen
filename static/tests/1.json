@@ -1,0 +1,14 @@
+{
+    "time": 60,
+    "questions": [
+        {
+            "question": "This is a quick test.",
+            "A": "Answer A (correct)",
+            "B": "Answer B",
+            "C": "Answer C",
+            "D": "Answer D",
+            "correct": "A",
+            "correction": "The correct answer was Answer A because..."
+    }
+    ]
+}
