@@ -156,8 +156,8 @@ def render_home():
 def render_admin():
     if 'username' in session:
         if session['username'] == 'admin':
-            query = "SELECT username, email, year, score FROM Resultaten" \
-                    "ORDER BY username"
+            query = "SELECT r.username, r.email, r.year, r.score FROM Resultaten r " \
+                    "ORDER BY r.username"
             answer = conn.cursor().execute(query)
             response = []
             for i in range(len(answer)):
