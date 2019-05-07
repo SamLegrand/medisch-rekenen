@@ -9,6 +9,7 @@ import os
 
 DATABASE_URL = os.environ['DATABASE_URL']
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+conn.set_session(readonly=False, autocommit=True)
 
 app = Flask(__name__)
 app.secret_key = "abcdefgsecretkey123420"
