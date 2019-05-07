@@ -66,10 +66,10 @@ def api_make_choice():
 
 def results_exist():
     exists_query = '''
-        select exists (
-            select 1
-            from Resultaten
-            where username = %s and year = %s
+        SELECT exists (
+            SELECT *
+            FROM Resultaten
+            WHERE username = %s and year = %s
         )'''
     conn.cursor().execute(exists_query, (session['username'], session['year'],))
     return conn.cursor().fetchone()[0]
@@ -88,7 +88,7 @@ def api_get_score():
         score = session['score']
 
         if not results_exist():
-            query = """INSERT INTO Resultaten (username, email, year, score) VALUES (%s, %s, %s, %s)"""
+            query = """INSERT INTO resultaten (username, email, year, score) VALUES (%s, %s, %s, %s)"""
             conn.cursor().execute(query, (session['username'], session['email'], session['year'], str(score) + "/" + str(len(input['questions']))))
 
         session.clear()
@@ -156,9 +156,9 @@ def render_home():
 def render_admin():
     if 'username' in session:
         if session['username'] == 'admin':
-            query = "SELECT r.username, r.email, r.year, r.score FROM Resultaten r " \
+            query = "SELECT * FROM resultaten r " \
                     "ORDER BY r.username"
-            answer = conn.cursor().execute(query)
+            answer = conn.cursor().execute(query, ())
             response = []
             for i in range(len(answer)):
                 response.append(dict())
