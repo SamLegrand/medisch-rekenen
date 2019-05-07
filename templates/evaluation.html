@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='evaluation.js') }}"></script>
+{% endblock %}
 {% block main %}
 <div class="container-fluid">
     <div class="jumbotron index-jumbo">
