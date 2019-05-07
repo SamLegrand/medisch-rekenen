@@ -78,7 +78,7 @@ def api_get_score():
 
         query = """INSERT INTO Resultaten (username, email, year, score) VALUES (%s, %s, %s, %s)"""
 
-        conn.cursor().execute(query, session['username'], session['email'], session['year'], str(score) + "/" + str(len(input['questions'])))
+        conn.cursor().execute(query, (session['username'], session['email'], session['year'], str(score) + "/" + str(len(input['questions']))))
 
         session.clear()
         return json.dumps({"Status": "Success", "Value": str(score) + "/" + str(len(input['questions']))})
