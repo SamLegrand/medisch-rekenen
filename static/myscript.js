@@ -60,7 +60,6 @@ $(document).ready(function(){
     }
     
     function renderScore() {
-        let score = 0;
         $.ajax({
             url: '/api/get_score',
             type: 'GET',

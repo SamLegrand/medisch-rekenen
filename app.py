@@ -64,6 +64,16 @@ def api_make_choice():
             session['score'] = 0
         return json.dumps({"Status": "Incorrect", "Correction": input['questions'][current]['correction'], "Correct": input['questions'][current]['correct']})
 
+def results_exist():
+    exists_query = '''
+        select exists (
+            select 1
+            from Resultaten
+            where username = %s and year = %s
+        )'''
+    conn.cursor().execute(exists_query, (session['username'], session['year'],))
+    return conn.cursor().fetchone()[0]
+
 @app.route('/api/get_score')
 def api_get_score():
     if 'score' in session:
@@ -77,9 +87,9 @@ def api_get_score():
             input = json.load(json_file)
         score = session['score']
 
-        query = """INSERT INTO Resultaten (username, email, year, score) VALUES (%s, %s, %s, %s)"""
-
-        conn.cursor().execute(query, (session['username'], session['email'], session['year'], str(score) + "/" + str(len(input['questions']))))
+        if not results_exist():
+            query = """INSERT INTO Resultaten (username, email, year, score) VALUES (%s, %s, %s, %s)"""
+            conn.cursor().execute(query, (session['username'], session['email'], session['year'], str(score) + "/" + str(len(input['questions']))))
 
         session.clear()
         return json.dumps({"Status": "Success", "Value": str(score) + "/" + str(len(input['questions']))})
@@ -146,7 +156,18 @@ def render_home():
 def render_admin():
     if 'username' in session:
         if session['username'] == 'admin':
-            return render_template('admin.html', session=session)
+            query = "SELECT username, email, year, score FROM Resultaten" \
+                    "ORDER BY username"
+            answer = conn.cursor().execute(query)
+            response = []
+            for i in range(len(answer)):
+                response.append(dict())
+                response[i]['username'] = answer[i][0]
+                response[i]['email'] = answer[i][1]
+                response[i]['year'] = answer[i][2]
+                response[i]['score'] = answer[i][3]
+
+            return render_template('admin.html', session=session, results=response)
     return redirect('/')
 
 @app.route('/evaluation')
