@@ -1,32 +1,82 @@
 $(document).ready(function(){
-    let input = {};
-    let current = 0;
-    let testEnd = 0;
-    let score = 0;
-    let time = 0;
+    let time = 60;
     const gaugeWidth = 150;
     let progressUnit = 0;
     let counter = 0;
     let TIMER;
+    renderQuestion();
     
     function renderQuestion() {
-        let q = input.questions[current];
-        $('#question').html(q.question);
-        $('#A').parent().find('p').html(q.A);
-        $('#B').parent().find('p').html(q.B);
-        $('#C').parent().find('p').html(q.C);
-        $('#D').parent().find('p').html(q.D);
-        if (current == input.questions.length - 1) {
-            $('#proceed').html('Evaluatie voltooien');
-        }
+        let q = {}
+        $.ajax({
+            url: '/api/render_question',
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (response.Status === "Success") {
+                    updateProgress();
+                    let q = response.Question;
+                    console.log(response.Question);
+                    $('#A').parent().find('p').html(q.A);
+                    $('#B').parent().find('p').html(q.B);
+                    $('#C').parent().find('p').html(q.C);
+                    $('#D').parent().find('p').html(q.D);
+                    if (response.LastQuestion === "True") {
+                        $('#proceed').html('Evaluatie voltooien');
+                    }
+                    $('#question').html(q.question);
+                }
+                else if (response.Status === "Done") {
+                    clearInterval(TIMER);
+                    renderScore();
+                }
+                else if (response.Status === "Error") {
+                    console.log("Error");
+                }
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
     }
     
-    function updateScore() {
-        $('#score').find('p').html(score + '/' + input.questions.length);
+    function updateProgress() {
+        $.ajax({
+            url: '/api/get_progress',
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (response.Status === "Success") {
+                    $('#score').find('p').html(response.Progress);
+                }
+                else if (response.Status === "Error") {
+                    console.log("Error");
+                }
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
     }
     
     function renderScore() {
-        $('#scoreCard').find('h5').html('U behaalde ' + score + '/' + input.questions.length);
+        let score = 0;
+        $.ajax({
+            url: '/api/get_score',
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (response.Status === "Success") {
+                    $('#scoreCard').find('h5').html('U behaalde ' + response.Value);
+                }
+                else if (response.Status === "Error") {
+                    console.log("Error");
+                }
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
         $('#evaluation').slideUp();
         $('#scoreCard').slideDown();
     }
@@ -46,7 +96,7 @@ $(document).ready(function(){
     function startTest() {
         renderTimer();
         TIMER = setInterval(renderTimer, 1000);
-        updateScore();
+        updateProgress();
         renderQuestion();
         $('#instructions').slideUp();
         $('#evaluation').slideDown();
@@ -55,12 +105,24 @@ $(document).ready(function(){
     $('#to-test').on('click', function(e) {
         let selectedOption = $('select[name="year"] option:selected');
         console.log('selected option: ' + selectedOption.val());
-        $.getJSON('/static/tests/' + selectedOption.val() + '.json', function(data) {
-            input = data;
-            testEnd = input.questions.length - 1;
-            time = input.time;
-            progressUnit = gaugeWidth/time;
-            startTest();
+        $.ajax({
+            url: '/api/start_test',
+            data: {
+                "year": selectedOption.val()
+            },
+            type: 'POST',
+            dataType: 'json',
+            success: function(response) {
+                if (response.Status === "Success") {
+                    startTest();
+                }
+                else {
+                    console.log(response);
+                }
+            },
+            error: function(error) {
+                console.log(error);
+            }
         });
     });
     
@@ -70,31 +132,38 @@ $(document).ready(function(){
         $('#evaluation input').each(function() {
             $(this).prop('disabled', true);
         });
-        // answer is correct
-        if (input.questions[current].correct == $(this).attr('id')) {
-            choice.parent().find('p').css('color', 'green');
-            score++;
-            updateScore();
-        }
-        // answer is not correct
-        else {
-            choice.parent().find('p').css('color', 'red');
-            $('#' + input.questions[current].correct).parent().find('p').css('color', 'green');
-        }
+        
+        $.ajax({
+            url: '/api/make_choice',
+            data: {
+                "choice": $(this).attr('id'),
+            },
+            type: 'POST',
+            dataType: 'json',
+            success: function(response) {
+                if (response.Status === "Correct") {
+                    choice.parent().find('p').css('color', 'green');
+                }
+                else if (response.Status === "Incorrect") {
+                    choice.parent().find('p').css('color', 'red');
+                    $('#' + response.Correct).parent().find('p').css('color', 'green');
+                    $('#correction').html(response.Correction);
+                }
+                else {
+                    window.location.href = "/evaluation";
+                }
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
         $('#proceed').show();
     });
     
     $('#proceed').on('click', function(e) {
         // render next question if it exists
-        if (current < testEnd) {
-            current++;
-            renderQuestion();
-        }
-        // end test
-        else {
-            clearInterval(TIMER);
-            renderScore();
-        }
+        updateProgress();
+        renderQuestion();
         $(this).hide();
     });
 

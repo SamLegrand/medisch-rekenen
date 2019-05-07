@@ -1,8 +1,14 @@
 from flask import Flask
 from flask import render_template
 from flask import session, request, json, redirect
+import psycopg2
 from datetime import datetime
 import re
+import json
+import os
+
+DATABASE_URL = os.environ['DATABASE_URL']
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 app = Flask(__name__)
 app.secret_key = "abcdefgsecretkey123420"
@@ -16,6 +22,7 @@ def api_login():
     if re.match(r'r[0-9]+', username):
         session['username'] = username
         email = request.form.get("email")
+        session['email'] = email
         print("username: ", username, " , email: ", email)
         return json.dumps({"Status": "Success"})
     if username == 'admin':
@@ -28,6 +35,99 @@ def api_login():
             return json.dumps({"Status": "ErrorPass"})
     else:
         return json.dumps({"Status": "ErrorUser"})
+
+@app.route('/api/make_choice', methods=["POST"])
+def api_make_choice():
+    if 'year' not in session:
+        return json.dumps({"Status": "Error"})
+
+    script_dir = os.path.dirname(__file__)
+    file_path = os.path.join(script_dir, 'static/tests/' + session['year'] + '.json')
+    choice = request.form.get("choice")
+    current = session['current']
+
+    input = {}
+    with open(file_path) as json_file:
+        input = json.load(json_file)
+
+    if choice == input['questions'][current]['correct']:
+        session['current'] += 1
+        if 'score' in session:
+            session['score'] += 1
+        else:
+            session['score'] = 1
+        return json.dumps({"Status": "Correct"})
+    else:
+        session['current'] += 1
+        if 'score' not in session:
+            session['score'] = 0
+        return json.dumps({"Status": "Incorrect", "Correction": input['questions'][current]['correction'], "Correct": input['questions'][current]['correct']})
+
+@app.route('/api/get_score')
+def api_get_score():
+    if 'score' in session:
+        script_dir = os.path.dirname(__file__)
+        file_path = os.path.join(script_dir, 'static/tests/' + session['year'] + '.json')
+        choice = request.form.get("choice")
+        current = session['current']
+
+        input = {}
+        with open(file_path) as json_file:
+            input = json.load(json_file)
+        score = session['score']
+
+        query = """INSERT INTO Resultaten (username, email, year, score) VALUES (%s, %s, %s, %s)"""
+
+        conn.cursor().execute(query, session['username'], session['email'], session['year'], str(score) + "/" + str(len(input['questions'])))
+
+        session.clear()
+        return json.dumps({"Status": "Success", "Value": str(score) + "/" + str(len(input['questions']))})
+    else:
+        session.clear()
+        return json.dumps({"Status": "Error"})
+
+@app.route('/api/start_test', methods=["POST"])
+def api_start_test():
+    session['year'] = request.form.get("year")
+    session['score'] = 0
+    session['current'] = 0
+    return json.dumps({"Status": "Success"})
+
+@app.route('/api/render_question')
+def api_render_question():
+    if 'year' in session and 'current' in session:
+        current = session['current']
+        script_dir = os.path.dirname(__file__)
+        file_path = os.path.join(script_dir, 'static/tests/' + session['year'] + '.json')
+        input = {}
+        with open(file_path) as json_file:
+            input = json.load(json_file)
+
+        if current == len(input['questions']):
+            return json.dumps({"Status": "Done"})
+
+        lq = "False"
+        if current == len(input['questions']) - 1:
+            lq = "True"
+        return json.dumps({"Status": "Success", "Question": input['questions'][current], "LastQuestion": lq})
+
+    else:
+        return json.dumps({"Status": "Error"})
+
+@app.route('/api/get_progress')
+def api_get_progress():
+    if 'current' in session:
+        if 'year' in session:
+            script_dir = os.path.dirname(__file__)
+            file_path = os.path.join(script_dir, 'static/tests/' + session['year'] + '.json')
+            current = session['current']
+            input = {}
+            with open(file_path) as json_file:
+                input = json.load(json_file)
+        return json.dumps({"Status": "Success", "Progress": str(session['current']+1) + "/" + str(len(input['questions']))})
+
+    else:
+        return json.dumps({"Status": "Error"})
 
 @app.route('/logout')
 def api_logout():
@@ -50,11 +150,28 @@ def render_admin():
 
 @app.route('/evaluation')
 def render_evaluation():
+
     if 'username' in session:
         if session['username'] != 'admin':
-            return render_template('evaluation.html', session=session)
+            if 'current' in session:
+                current = session['current']
+                script_dir = os.path.dirname(__file__)
+                file_path = os.path.join(script_dir, 'static/tests/' + session['year'] + '.json')
+                input = {}
+                with open(file_path) as json_file:
+                    input = json.load(json_file)
+
+                if current == len(input['questions']):
+                    return render_template('evaluation.html', session=session, current=session['current'], score=True)
+
+                return render_template('evaluation.html', session=session, current=session['current'])
+            else:
+                return render_template('evaluation.html', session=session)
         else:
             return redirect('/admin')
+    else:
+        return redirect('/')
+
 
 if __name__ == '__main__':
     app.run()

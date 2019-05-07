@@ -4,7 +4,11 @@
     <div class="jumbotron index-jumbo">
         <div class="container">
             <h2 class="display-4 text-center pb-5">Evaluatie</h2>
+            {% if current is defined %}
+            <div class="card" style="display: none">
+            {% else %}
             <div class="card">
+            {% endif %}
                 <div class="card-body" id="welcome">
                     <h5 class="card-title">Welkom</h5>
                     <p class="card-text">Kies hieronder in welk jaar u momenteel studeert.</p>
@@ -33,7 +37,11 @@
                     <a href="#" class="float-right" id="back-welcome">Stap terug</a>
                 </div>
             </div>
+            {% if current is defined and score is not defined %}
+            <div class="card" id="evaluation">
+            {% else %}
             <div class="card" style="display: none" id="evaluation">
+            {% endif %}
                 <div class="card-body">
                     <h5 class="card-title" id="question"></h5>
                     <div class="form-check">
@@ -60,7 +68,14 @@
                             <p></p>
                         </label>
                     </div>
-                    <p id="timer"></p>
+                    <div class="row">
+                       <div class="col-6">
+                           <p id="timer"></p>
+                       </div>
+                       <div class="col-6">
+                           <p id="correction"></p>
+                       </div>
+                    </div>
                     <button class="btn btn-primary" id="proceed" style="display: none">Volgende vraag</button>
                     <div id="score">
                         <p class="float-right">
@@ -69,7 +84,11 @@
                     </div>
                 </div>
             </div>
+            {% if score is defined %}
+            <div class="card" id="scoreCard">
+            {% else %}
             <div class="card" style="display: none" id="scoreCard">
+            {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">U behaalde 0/14</h5>
                     <p class="card-text">U ontvangt zo dadelijk een e-mail met een bevestiging van uw resultaat.</p>
