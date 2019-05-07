@@ -23,112 +23,117 @@
 </div>
 <div class="container">
     <div class="row">
-        <h5>1e jaar</h5>
         <div class="col-sm-1"></div>
         <div class="col-sm-10 mt-3 mb-3">
             <div class="row">
-                <div class="col-6">
+                <div class="col-4 border-bottom">
                     <p>Studentennummer</p>
                 </div>
-                <div class="col-6">
+                <div class="col-4 border-bottom">
+                    E-mail
+                </div>
+                <div class="col-4 border-bottom">
                     Score
                 </div>
             </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <div class="row">
+        <div class="col border-bottom">
+            <h5>1e jaar</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-10 mt-3 mb-3">
             {% for result in results %}
             {% if result['year'] == 1 %}
             <div class="row">
-                <div class="col-6">
+                <div class="col-4 border">
                     <p>{{ result['username'] }}</p>
                 </div>
-                <div class="col-6">
+                <div class="col-4 border">
+                    <p>{{ result['email'] }}</p>
+                </div>
+                <div class="col-4 border">
                     <p>{{ result['score'] }}</p>
                 </div>
             </div>
             {% endif %}
             {% endfor %}
         </div>
-        <div class="col-sm-1"></div>
     </div>
     <div class="row">
-        <h5>2e jaar</h5>
-        <div class="col-sm-1"></div>
+        <div class="col border-bottom">
+            <h5>2e jaar</h5>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-10 mt-3 mb-3">
-            <div class="row">
-                <div class="col-6">
-                    <p>Studentennummer</p>
-                </div>
-                <div class="col-6">
-                    Score
-                </div>
-            </div>
             {% for result in results %}
             {% if result['year'] == 2 %}
             <div class="row">
-                <div class="col-6">
+                <div class="col-4 border">
                     <p>{{ result['username'] }}</p>
                 </div>
-                <div class="col-6">
+                <div class="col-4 border">
+                    <p>{{ result['email'] }}</p>
+                </div>
+                <div class="col-4 border">
                     <p>{{ result['score'] }}</p>
                 </div>
             </div>
             {% endif %}
             {% endfor %}
         </div>
-        <div class="col-sm-1"></div>
     </div>
     <div class="row">
-        <h5>3e jaar</h5>
-        <div class="col-sm-1"></div>
+        <div class="col border-bottom">
+            <h5>3e jaar</h5>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-10 mt-3 mb-3">
-            <div class="row">
-                <div class="col-6">
-                    <p>Studentennummer</p>
-                </div>
-                <div class="col-6">
-                    Score
-                </div>
-            </div>
             {% for result in results %}
             {% if result['year'] == 3 %}
             <div class="row">
-                <div class="col-6">
+                <div class="col-4 border">
                     <p>{{ result['username'] }}</p>
                 </div>
-                <div class="col-6">
+                <div class="col-4 border">
+                    <p>{{ result['email'] }}</p>
+                </div>
+                <div class="col-4 border">
                     <p>{{ result['score'] }}</p>
                 </div>
             </div>
             {% endif %}
             {% endfor %}
         </div>
-        <div class="col-sm-1"></div>
     </div>
     <div class="row">
-        <h5>4e jaar</h5>
-        <div class="col-sm-1"></div>
+        <div class="col border-bottom">
+            <h5>4e jaar</h5>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-10 mt-3 mb-3">
-            <div class="row">
-                <div class="col-6">
-                    <p>Studentennummer</p>
-                </div>
-                <div class="col-6">
-                    Score
-                </div>
-            </div>
             {% for result in results %}
             {% if result['year'] == 4 %}
             <div class="row">
-                <div class="col-6">
+                <div class="col-4 border">
                     <p>{{ result['username'] }}</p>
                 </div>
-                <div class="col-6">
+                <div class="col-4 border">
+                    <p>{{ result['email'] }}</p>
+                </div>
+                <div class="col-4 border">
                     <p>{{ result['score'] }}</p>
                 </div>
             </div>
             {% endif %}
             {% endfor %}
         </div>
-        <div class="col-sm-1"></div>
     </div>
     <hr>
 </div>
