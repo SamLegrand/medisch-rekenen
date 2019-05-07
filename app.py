@@ -67,7 +67,7 @@ def api_make_choice():
 def results_exist():
     exists_query = '''
         SELECT exists (
-            SELECT *
+            SELECT 1
             FROM Resultaten
             WHERE username = %s and year = %s
         )'''
@@ -156,9 +156,10 @@ def render_home():
 def render_admin():
     if 'username' in session:
         if session['username'] == 'admin':
-            query = "SELECT * FROM resultaten r " \
-                    "ORDER BY r.username"
-            answer = conn.cursor().execute(query, ())
+            query = "SELECT * FROM resultaten " \
+                    "ORDER BY username"
+            conn.cursor().execute(query, ())
+            answer = conn.cursor().fetchall()
             response = []
             for i in range(len(answer)):
                 response.append(dict())
