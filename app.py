@@ -71,8 +71,9 @@ def results_exist():
             FROM Resultaten
             WHERE username = %s and year = %s
         )'''
-    conn.cursor().execute(exists_query, (session['username'], session['year'],))
-    return conn.cursor().fetchone()[0]
+    cur = conn.cursor()
+    cur.execute(exists_query, (session['username'], session['year'],))
+    return cur.fetchone()[0]
 
 @app.route('/api/get_score')
 def api_get_score():
@@ -156,10 +157,11 @@ def render_home():
 def render_admin():
     if 'username' in session:
         if session['username'] == 'admin':
+            cur = conn.cursor()
             query = "SELECT * FROM resultaten " \
                     "ORDER BY username"
-            conn.cursor().execute(query, ())
-            answer = conn.cursor().fetchall()
+            cur.execute(query, ())
+            answer = cur.fetchall()
             response = []
             for i in range(len(answer)):
                 response.append(dict())
