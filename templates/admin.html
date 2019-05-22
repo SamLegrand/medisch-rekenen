@@ -44,6 +44,10 @@
             <h5>1e jaar</h5>
         </div>
     </div>
+    <div id="table1"></div>
+    <div id="table2"></div>
+    <div id="table3"></div>
+    <div id="table4"></div>
     <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-10 mt-3 mb-3">
@@ -63,7 +67,17 @@
             {% endif %}
             {% endfor %}
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-sm-1">
+            {% for result in results %}
+            {% if result['year'] == 3 %}
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-light delete-score" value="result['year']-result['username']"><i class="far fa-trash-alt"></i></button>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
     <div class="row">
         <div class="col border-bottom">
@@ -89,7 +103,17 @@
             {% endif %}
             {% endfor %}
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-sm-1">
+            {% for result in results %}
+            {% if result['year'] == 1 %}
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-light delete-score" value="result['year']-result['username']"><i class="far fa-trash-alt"></i></button>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
     <div class="row">
         <div class="col border-bottom">
@@ -100,7 +124,7 @@
         <div class="col-sm-1"></div>
         <div class="col-sm-10 mt-3 mb-3">
             {% for result in results %}
-            {% if result['year'] == 3 %}
+            {% if result['year'] == 2 %}
             <div class="row">
                 <div class="col-4 border">
                     <p>{{ result['username'] }}</p>
@@ -115,7 +139,17 @@
             {% endif %}
             {% endfor %}
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-sm-1">
+            {% for result in results %}
+            {% if result['year'] == 3 %}
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-light delete-score" value="result['year']-result['username']"><i class="far fa-trash-alt"></i></button>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
     <div class="row">
         <div class="col border-bottom">
@@ -141,7 +175,17 @@
             {% endif %}
             {% endfor %}
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-sm-1">
+            {% for result in results %}
+            {% if result['year'] == 4 %}
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-light delete-score" value="result['year']-result['username']"><i class="far fa-trash-alt"></i></button>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
     <hr>
 </div>

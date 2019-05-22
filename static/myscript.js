@@ -64,6 +64,31 @@ $(document).ready(function(){
         $('#LoginForm').slideDown();
     });
     
-    
-    
+    $('.delete-score').on('click', function(e) {
+        let info = $('div').attr('class').split(' ').pop().split('-');
+        
+        let confirmation = confirm("Weet u zeker dat u deze score wilt verwijderen?");
+        if (confirmation) {
+            $.ajax({
+            url: '/api/delete_score',
+            data: {
+                "year": info[0],
+                "username": info[1]
+            },
+            type: 'POST',
+            dataType: 'json',
+            success: function(response) {
+                if (response.Status === "Success") {
+                    location.reload();
+                }
+                else {
+                    console.log(response);
+                }
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+        }
+    });
 });

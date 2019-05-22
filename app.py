@@ -164,6 +164,18 @@ def api_logout():
     session.pop('username')
     return redirect('/')
 
+@app.route('/api/delete_score', methods=["POST"])
+def api_delete_score():
+    username = request.form.get("username")
+    year = request.form.get("year")
+
+    #Delete from DB
+    query = """DELETE FROM resultaten WHERE username = %s and year = %s"""
+    result = conn.cursor().execute(query, (username, year))
+    if result:
+        return json.dumps({"Status": "Success"})
+    else:
+        return json.dumps({"Status": "Error"})
 
 ## Routes ##
 

@@ -181,5 +181,6 @@ $(document).ready(function(){
     $('.back-welcome').on('click', function (e) {
         $('#welcome').slideDown();
         $('#instructions').slideUp();
+        $('#alreadydone').slideUp();
     });
 });
