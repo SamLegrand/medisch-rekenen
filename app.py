@@ -109,7 +109,8 @@ def api_check_exists():
             )'''
     cur = conn.cursor()
     cur.execute(exists_query, (session['username'], request.form.get("year"),))
-    if cur.fetchone() is not None and cur.fetchone()[0]:
+    result = cur.fetchone()
+    if result is not None and result[0]:
         return json.dumps({"Status": "Exists"})
     else:
         return json.dumps({"Status": "Success"})
