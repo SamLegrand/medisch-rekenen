@@ -109,7 +109,7 @@ def api_check_exists():
             )'''
     cur = conn.cursor()
     cur.execute(exists_query, (session['username'], request.form.get("year"),))
-    if cur.fetchone()[0] is not None and cur.fetchone()[0]:
+    if cur.fetchone() is not None and cur.fetchone()[0]:
         return json.dumps({"Status": "Exists"})
     else:
         return json.dumps({"Status": "Success"})
@@ -169,11 +169,22 @@ def api_delete_score():
 
     #Delete from DB
     query = """DELETE FROM resultaten WHERE username = %s and year = %s"""
-    result = conn.cursor().execute(query, (username, year),)
+    conn.cursor().execute(query, (username, year),)
     return json.dumps({"Status": "Success"})
 
-## Routes ##
+@app.route('/api/delete_failed', methods=["POST"])
+def api_delete_failed():
+    users = request.form.get("users")
+    year = request.form.get("year")
 
+    # Delete from DB
+    for user in users:
+        query = """DELETE FROM resultaten WHERE username = %s and year = %s"""
+        conn.cursor().execute(query, (user, year),)
+    return json.dumps({"Status": "Success"})
+
+
+## Routes ##
 @app.route('/')
 def render_home():
     return render_template('index.html', session=session)

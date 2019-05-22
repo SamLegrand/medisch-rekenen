@@ -91,4 +91,36 @@ $(document).ready(function(){
         });
         }
     });
+    
+    $('.delete-failed').on('click', function (e) {
+        let year = $(this).attr('value');
+        let users = new Array();
+        $('.year' + year).find('.username').each(function (e) {
+            users.push($(this).text());
+        });
+        
+        let confirmation = confirm("Weet u zeker dat u niet geslaagde studenten wilt verwijderen?");
+        if (confirmation) {
+            $.ajax({
+            url: '/api/delete_failed',
+            data: {
+                "year": $(this).attr('value'),
+                "users": users
+            },
+            type: 'POST',
+            dataType: 'json',
+            success: function(response) {
+                if (response.Status === "Success") {
+                    location.reload();
+                }
+                else {
+                    console.log(response);
+                }
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+        }
+    });
 });
