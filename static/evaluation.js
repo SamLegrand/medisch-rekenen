@@ -143,7 +143,8 @@ $(document).ready(function(){
     $('#proceed').on('click', function (e) {
         // Enable inputs
         $('#evaluation input').each(function () {
-            $(this).prop('disabled', true);
+            $(this).prop('disabled', false);
+            $(this).parent().find('p').css('color', 'inherit');
         });
         // render next question if it exists
         updateProgress();
