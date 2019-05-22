@@ -141,9 +141,9 @@ $(document).ready(function(){
         $('#proceed').show();
     });
     
-    $('#proceed').on('click', function(e) {
+    $('#proceed').on('click', function (e) {
         // Enable inputs
-        $('#evaluation input').each(function() {
+        $('#evaluation input').each(function () {
             $(this).prop('disabled', true);
         });
         // render next question if it exists
@@ -152,13 +152,31 @@ $(document).ready(function(){
         $(this).hide();
     });
 
-    $('#to-instructions').on('click', function(e) {
-         $('#welcome').slideUp();
-         $('#instructions').slideDown();
+    $('#to-instructions').on('click', function (e) {
+        $.ajax({
+            url: '/api/check_score_exists',
+            data: {
+                "year": selectedOption.val()
+            },
+            type: 'POST',
+            dataType: 'json',
+            success: function (response) {
+                if (response.Status === "Success") {
+                    $('#welcome').slideUp();
+                    $('#instructions').slideDown();
+                } else {
+                    $('#welcome').slideUp();
+                    $('#alreadydone').slideDown();
+                }
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
     });
     
-    $('#back-welcome').on('click', function(e) {
-         $('#welcome').slideDown();
-         $('#instructions').slideUp();
+    $('.back-welcome').on('click', function (e) {
+        $('#welcome').slideDown();
+        $('#instructions').slideUp();
     });
 });

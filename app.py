@@ -75,6 +75,7 @@ def results_exist():
     cur.execute(exists_query, (session['username'], session['year'],))
     return cur.fetchone()[0]
 
+# Receive score and put it in DataBase (if it does not yet exist)
 @app.route('/api/get_score')
 def api_get_score():
     if 'score' in session:
@@ -97,6 +98,18 @@ def api_get_score():
     else:
         session.clear()
         return json.dumps({"Status": "Error"})
+
+@app.route('api/check_exists', methods=["POST"])
+def api_check_exists():
+    exists_query = '''
+            SELECT exists (
+                SELECT 1
+                FROM Resultaten
+                WHERE username = %s and year = %s
+            )'''
+    cur = conn.cursor()
+    cur.execute(exists_query, (session['username'], request.form.get("year"),))
+    return cur.fetchone()[0]
 
 @app.route('/api/start_test', methods=["POST"])
 def api_start_test():
