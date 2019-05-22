@@ -24,6 +24,14 @@
                     <a href="#" class="btn btn-primary" id="to-instructions">Ga verder</a>
                 </div>
             </div>
+            <div class="card" style="display: none" id="alreadydone">
+                <div class="card-body">
+                    <h5 class="card-title">Reeds uitgevoerd.</h5>
+                    <p class="card-text">Deze test werd door u reeds uitgevoerd. Gelieve een andere keuze te maken.</p> 
+                    <p>Indien dit niet correct is, gelieve dan contact op te nemen met uw leraar.</p>
+                    <a href="#" class="float-right back-welcome">Stap terug</a>
+                </div>
+            </div>
             <div class="card" style="display: none" id="instructions">
                 <div class="card-body">
                     <h5 class="card-title">Instructies</h5>
@@ -37,7 +45,7 @@
                     </ul>
                     <p class="card-text">Bent u klaar om te starten?</b></p>
                     <a href="#" class="btn btn-primary" id="to-test">Ja, ga verder</a>
-                    <a href="#" class="float-right" id="back-welcome">Stap terug</a>
+                    <a href="#" class="float-right back-welcome">Stap terug</a>
                 </div>
             </div>
             {% if current is defined and score is not defined %}
