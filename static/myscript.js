@@ -94,7 +94,7 @@ $(document).ready(function(){
     
     $('.delete-failed').on('click', function (e) {
         let year = $(this).attr('value');
-        let minimum = Math.ceil(0.5 * parseInt($('#year' + year).find('.col-3 p').text().split('/').pop());
+        let minimum = Math.ceil(0.5 * parseInt($('#year' + year).find('.col-3 p').text().split('/').pop()));
         let users = new Array();
         $('#year' + year).find('.row').each(function (e) {
             if ($(this).find('.col-3 p').text()[0] >= minimum) {
