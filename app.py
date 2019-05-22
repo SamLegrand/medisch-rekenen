@@ -99,7 +99,7 @@ def api_get_score():
         session.clear()
         return json.dumps({"Status": "Error"})
 
-@app.route('api/check_exists', methods=["POST"])
+@app.route('/api/check_exists', methods=["POST"])
 def api_check_exists():
     exists_query = '''
             SELECT exists (
