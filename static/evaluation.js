@@ -85,7 +85,6 @@ $(document).ready(function(){
     
     $('#to-test').on('click', function(e) {
         let selectedOption = $('select[name="year"] option:selected');
-        console.log('selected option: ' + selectedOption.val());
         $.ajax({
             url: '/api/start_test',
             data: {
@@ -153,6 +152,7 @@ $(document).ready(function(){
     });
 
     $('#to-instructions').on('click', function (e) {
+        let selectedOption = $('select[name="year"] option:selected');
         $.ajax({
             url: '/api/check_score_exists',
             data: {
