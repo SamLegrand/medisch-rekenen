@@ -95,7 +95,7 @@ $(document).ready(function(){
     $('.delete-failed').on('click', function (e) {
         let year = $(this).attr('value');
         let users = new Array();
-        $('.year' + year).find('.username').each(function (e) {
+        $('#year' + year).find('.username').each(function (e) {
             users.push($(this).text());
         });
         
