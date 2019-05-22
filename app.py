@@ -109,12 +109,10 @@ def api_check_exists():
             )'''
     cur = conn.cursor()
     cur.execute(exists_query, (session['username'], request.form.get("year"),))
-    if (cur.fetchone()[0]):
+    if cur.fetchone()[0] is not None and cur.fetchone()[0]:
         return json.dumps({"Status": "Exists"})
-    elif cur.fetchone()[0] == False:
-        return json.dumps({"Status": "Success"})
     else:
-        return json.dumps({"Status": "Error"})
+        return json.dumps({"Status": "Success"})
 
 @app.route('/api/start_test', methods=["POST"])
 def api_start_test():
