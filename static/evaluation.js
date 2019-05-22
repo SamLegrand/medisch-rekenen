@@ -142,6 +142,10 @@ $(document).ready(function(){
     });
     
     $('#proceed').on('click', function(e) {
+        // Enable inputs
+        $('#evaluation input').each(function() {
+            $(this).prop('disabled', true);
+        });
         // render next question if it exists
         updateProgress();
         renderQuestion();
