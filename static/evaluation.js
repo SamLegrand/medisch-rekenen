@@ -1,9 +1,6 @@
 $(document).ready(function(){
-    let time = 60;
     const gaugeWidth = 150;
     let progressUnit = 0;
-    let counter = 0;
-    let TIMER;
     renderQuestion();
     
     function renderQuestion() {
@@ -27,7 +24,6 @@ $(document).ready(function(){
                     $('#question').html(q.question);
                 }
                 else if (response.Status === "Done") {
-                    clearInterval(TIMER);
                     renderScore();
                 }
                 else if (response.Status === "Error") {
@@ -80,21 +76,7 @@ $(document).ready(function(){
         $('#scoreCard').slideDown();
     }
     
-    function renderTimer() {
-        if (counter <= time) {
-            $('#timer').html(counter);
-            //$('#timeGauge').style.width = progressUnit * counter + "px";
-            counter++;
-        }
-        else {
-            clearInterval(TIMER);
-            renderScore();
-        }
-    }
-    
     function startTest() {
-        renderTimer();
-        TIMER = setInterval(renderTimer, 1000);
         updateProgress();
         renderQuestion();
         $('#instructions').slideUp();
