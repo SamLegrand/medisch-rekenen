@@ -171,7 +171,7 @@ def api_delete_score():
 
     #Delete from DB
     query = """DELETE FROM resultaten WHERE username = %s and year = %s"""
-    result = conn.cursor().execute(query, (username, year))
+    result = conn.cursor().execute(query, (username, year),)
     if result:
         return json.dumps({"Status": "Success"})
     else:
