@@ -65,7 +65,7 @@ $(document).ready(function(){
     });
     
     $('.delete-score').on('click', function(e) {
-        let info = $(this).attr('class').split(' ').pop().split('-');
+        let info = $(this).attr('value').split('-');
         
         let confirmation = confirm("Weet u zeker dat u deze score wilt verwijderen?");
         if (confirmation) {
