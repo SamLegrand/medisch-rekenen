@@ -98,6 +98,7 @@ $(document).ready(function(){
         $('#year' + year).find('.username').each(function (e) {
             users.push($(this).text());
         });
+        console.log(users);
         
         let confirmation = confirm("Weet u zeker dat u niet geslaagde studenten wilt verwijderen?");
         if (confirmation) {
