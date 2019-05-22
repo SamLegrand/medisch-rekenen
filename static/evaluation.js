@@ -164,9 +164,12 @@ $(document).ready(function(){
                 if (response.Status === "Success") {
                     $('#welcome').slideUp();
                     $('#instructions').slideDown();
-                } else {
+                } else if (response.Status === "Exists") {
                     $('#welcome').slideUp();
                     $('#alreadydone').slideDown();
+                }
+                else {
+                    console.log(response.Status);
                 }
             },
             error: function (error) {
