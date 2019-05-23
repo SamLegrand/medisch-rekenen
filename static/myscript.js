@@ -97,7 +97,7 @@ $(document).ready(function(){
         let users = new Array();
         $('#year' + year).find('.row').each(function (e) {
             let score = $(this).find('.col-3 p').text().split('/');
-            let minimum = Math.ceil(0.5 * score.pop());
+            let minimum = Math.ceil(0.7 * score.pop());
             if (score[0] < minimum) {
                 users.push($(this).find('.username p').text());
             }

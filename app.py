@@ -97,7 +97,7 @@ def api_get_score():
             conn.cursor().execute(query, (session['username'], session['email'], session['year'], str(score) + "/" + str(len(input['questions']))))
 
         status = "Niet geslaagd"
-        if score > math.ceil(0.5 * len(input['questions'])):
+        if score >= math.ceil(0.7 * len(input['questions'])):
             status = "Geslaagd"
 
         from_addr = 'rekenmore@gmail.com'
