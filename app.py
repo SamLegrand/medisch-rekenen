@@ -176,12 +176,12 @@ def api_delete_score():
 
 @app.route('/api/delete_failed', methods=["POST"])
 def api_delete_failed():
-    users = request.form.getlist("users")
+    users = request.form.getlist("users[]")
     year = request.form.get("year")
 
+    print(users, year)
     # Delete from DB
     for user in users:
-        print(user, year)
         query = """DELETE FROM resultaten WHERE username = %s and year = %s"""
         conn.cursor().execute(query, (user, year),)
     return json.dumps({"Status": "Success"})
