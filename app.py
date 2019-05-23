@@ -107,7 +107,7 @@ def api_get_score():
                'Studentennummer: ' + session['username'] + '\n' \
                'Jaar: ' + session['year'] + '\n' \
                'Status: ' + status + '\n' \
-               'Score: ' + score + "/" + len(input['questions'])
+               'Score: ' + str(score) + "/" + str(len(input['questions']))
 
         msg = message.Message()
         msg.add_header('from', from_addr)
