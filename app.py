@@ -168,7 +168,8 @@ def api_delete_score():
     username = request.form.get("username")
     year = request.form.get("year")
 
-    #Delete from DB
+    # Delete from DB
+    print(username, year)
     query = """DELETE FROM resultaten WHERE username = %s and year = %s"""
     conn.cursor().execute(query, (username, year),)
     return json.dumps({"Status": "Success"})
@@ -180,6 +181,7 @@ def api_delete_failed():
 
     # Delete from DB
     for user in users:
+        print(user, year)
         query = """DELETE FROM resultaten WHERE username = %s and year = %s"""
         conn.cursor().execute(query, (user, year),)
     return json.dumps({"Status": "Success"})
