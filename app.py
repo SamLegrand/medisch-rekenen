@@ -115,9 +115,11 @@ def api_get_score():
         msg.add_header('subject', subject)
         msg.set_payload(body)
 
-        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        server.ehlo()
         server.login(from_addr, 'topsport123')
         server.send_message(msg, from_addr=from_addr, to_addrs=[to_addr])
+        server.close()
 
         session.clear()
         return json.dumps({"Status": "Success", "Value": str(score) + "/" + str(len(input['questions']))})
