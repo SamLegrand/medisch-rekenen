@@ -97,14 +97,12 @@ $(document).ready(function(){
         let users = new Array();
         $('#year' + year).find('.row').each(function (e) {
             let score = $(this).find('.col-3 p').text().split('/');
-            console.log(score[0]);
-            console.log(score[1]);
-            let minimum = Math.ceil(0.5 * parseInt(score.pop()));
+            let minimum = Math.ceil(0.5 * score.pop());
             if (score[0] >= minimum) {
-                console.log($(this).find('.username p').text());
                 users.push($(this).find('.username p').text());
             }
         });
+        console.log(users);
         if (users.length === 0) {
             return;
         }
