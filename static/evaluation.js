@@ -147,7 +147,7 @@ $(document).ready(function(){
             $(this).prop('checked', false);
             $(this).parent().find('p').css('color', 'inherit');
         });
-        $('#correction').hide();
+        $('#correction').html('');
         // render next question if it exists
         updateProgress();
         renderQuestion();
