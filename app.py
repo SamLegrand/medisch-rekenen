@@ -100,7 +100,6 @@ def api_get_score():
         if score > math.ceil(0.5 * len(input['questions'])):
             status = "Geslaagd"
 
-        session.clear()
         from_addr = 'rekenmore@gmail.com'
         to_addr = session['email']
         subject = 'Bevestiging resultaat medisch rekenen'
@@ -120,6 +119,7 @@ def api_get_score():
         server.login(from_addr, 'topsport123')
         server.send_message(msg, from_addr=from_addr, to_addrs=[to_addr])
 
+        session.clear()
         return json.dumps({"Status": "Success", "Value": str(score) + "/" + str(len(input['questions']))})
     else:
         session.clear()
