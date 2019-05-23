@@ -144,8 +144,10 @@ $(document).ready(function(){
         // Enable inputs
         $('#evaluation input').each(function () {
             $(this).prop('disabled', false);
+            $(this).prop('checked', false);
             $(this).parent().find('p').css('color', 'inherit');
         });
+        $('#correction').hide();
         // render next question if it exists
         updateProgress();
         renderQuestion();
