@@ -102,7 +102,6 @@ $(document).ready(function(){
                 users.push($(this).find('.username p').text());
             }
         });
-        console.log(users);
         if (users.length === 0) {
             return;
         }

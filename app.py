@@ -175,7 +175,7 @@ def api_delete_score():
 
 @app.route('/api/delete_failed', methods=["POST"])
 def api_delete_failed():
-    users = request.form.get("users")
+    users = request.form.getlist("users")
     year = request.form.get("year")
 
     # Delete from DB
