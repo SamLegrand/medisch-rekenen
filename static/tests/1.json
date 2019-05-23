@@ -10,13 +10,85 @@
             "correction": "(7.5 liter X 60 bar) : 3 Liter/minuut = 150 minuten of 2 uur en 30 minuten"
         },
         {
+            "question": "Je moet 100 ml glucoseoplossing 2,5% maken. Hoeveel gram glucose heb je nodig?",
+            "A": "5 gram",
+            "B": "0,25 gram",
+            "C": "2,5 gram",
+            "D": "0,5 gram",
+            "correct": "C",
+            "correction": "2,5%= 2,5 gram per 100 ml (2,5 g glucose)"
+        },
+        {
+            "question": "Je hebt 2 dl glucose oplossing 10%. Hoeveel gram glucose bevat deze oplossing?",
+            "A": "2 gram",
+            "B": "10 gram",
+            "C": "20 gram",
+            "D": "1 gram",
+            "correct": "C",
+            "correction": "2 dl = 200 ml   10% = 10 g per 100 ml oplossing  20 gram"
+        },
+        {
+            "question": "De heer Van Hout heeft een streptokokkeninfectie. Hij wordt daarvoor behandeld met Erythrocine IV. Jij hebt de beschikking over flacons van 1 gram. Voor injectie moet je de inhoud oplossen in steriel water tot 20 ml. Wat is de concentratie van de verkregen oplossing in %?",
+            "A": "20%",
+            "B": "10%",
+            "C": "5%",
+            "D": "1%",
+            "correct": "C",
+            "correction": "1000mg in 20 ml -> 50 mg in 1 ml; 50 mg in 1 ml  100 ml = 5000 mg -> 5%"
+        },
+        {
+            "question": "Je hebt Lyorthol 5%. Hiervan moet je 1 liter Lyorthol 1% van maken. Hoeveel ml Lyorthol 5% moet je gebruiken?",
+            "A": "10 ml Lyorthol 5%",
+            "B": "50 ml Lyorthol 5%",
+            "C": "200 ml Lyorthol 5%",
+            "D": "500 ml Lyorthol 5%",
+            "correct": "C",
+            "correction": "5% -> 1% = /5; 1000ml /5 = 200ml lyorthol 5%"
+        },
+        {
+            "question": "Hoeveel ml water moet je toevoegen?",
+            "A": "500 ml water",
+            "B": "800 ml water",
+            "C": "950 ml water",
+            "D": "990 ml water",
+            "correct": "B",
+            "correction": "1000ml- 200ml = 800ml"
+        },
+        {
+            "question": "Een patiënt moet 3 keer per dag 5 mg Diazepan IV krijgen. De ampullen (5ml) op de afdeling zijn 2 mg/ml. Hoeveel ml moet je dan inspuiten per keer?",
+            "A": "7u-15u-23u",
+            "B": "8u-12u- 16u",
+            "C": "9u-18u- 23u",
+            "D": "6u-12u-20u",
+            "correct": "A",
+            "correction": "24/3 = 8 -> om de 8 uur "
+        },
+        {
             "question": "Florke heeft al sinds enkele jaren 7 liter zuurstof per minuut nodig. Hij moet vandaag naar radiologie voor een RX van zijn hand. Florke vertrekt thuis met zijn zuurstoffles van 7,5 liter zuurstof, de zuurstof staat onder een druk van 96 bar. Kan hij met deze zuurstoffles anderhalf uur wegblijven?",
-            "A": "Antwoord voor A",
-            "B": "Antwoord voor B",
-            "C": "Ge snapt het nu wel denk ik?",
-            "D": "Cool",
-            "correct": "D",
-            "correction": "Kleine uitleg waarom dit nu het correcte antwoord is indien een fout antwoord werd aangeduid"
+            "A": "2ml",
+            "B": "2,5ml",
+            "C": "3ml",
+            "D": "5ml",
+            "correct": "B",
+            "correction": "5mg : 2mg/ ml = 2,5ml"
+        },
+        {
+            "question": "Rik heeft door zijn chronische alcoholgebruik een kaliumtekort ontwikkeld. Hij moet in totaal 45 meq kalium toegediend krijgen per infuus. Hoeveel flacons moet Rik dan voorzien voor de thuisverpleegkundige als je weet dat één flacon bestaat uit 10 meq.",
+            "A": "4",
+            "B": "5",
+            "C": "10",
+            "D": "45",
+            "correct": "B",
+            "correction": "45/10 = 4,5 -> 5 flacons"
+        },
+        {
+            "question": "Een patiënt moet per injectie in 24 uur Valproïnezuur 10 mg/kg in 2 gelijke doses toegediend krijgen. De patiënt weegt 72 kg. Aanwezig is Valproïnezuur poeder voor injectievloeistof 400 mg op te lossen in 4 ml solvens. Hoeveel ml moet de patiënt per keer toegediend krijgen? ",
+            "A": "2,80 ml",
+            "B": "3,60 ml",
+            "C": "7,20 ml",
+            "D": "10 ml",
+            "correct": "B",
+            "correction": "72kg x 10mg/kg = 720mg per 24uur; 720mg / 2 = 360mg; Regel van 3: 400mg in 4ml -> 100mg in 1ml --> 360mg in 3,6ml"
         }
     ]
 }
