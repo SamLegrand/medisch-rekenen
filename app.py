@@ -239,7 +239,8 @@ def render_admin():
                 response[i]['email'] = answer[i][1]
                 response[i]['year'] = answer[i][2]
                 response[i]['score'] = answer[i][3]
-                response[i]['passed'] = (int(answer[i][3][0])/int(answer[i][3][-1]) >= 0.7)
+                score = answer[i][3].split('/')
+                response[i]['passed'] = (int(score[0])/int(score[1]) >= 0.7)
 
             return render_template('admin.html', session=session, results=response)
     return redirect('/')
