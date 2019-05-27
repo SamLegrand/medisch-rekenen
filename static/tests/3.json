@@ -4,7 +4,8 @@
             "question": "Stijn moet vandaag naar Londen vliegen. Hij is ongeveer 3 uur onderweg en heeft een zuurstofbehoefte van 3 liter per minuut. Hij heeft thuis 2 zuurstofflessen staan. Eén van 5 liter en één van 7,5 liter. Ze hebben elk een druk van 90 bar. Welke fles pakt Stijn best mee?",
             "A": "5 liter",
             "B": "6 liter",
-            "C": "7,5 liter", 
+            "C": "7,5 liter",
+            "D": "8 liter",
             "correct": "B",
             "correction": "(? X 90 bar) : 3 Liter /minuut = 3 uur → (180 minuten X 3 Liter/minuut) : 90 bar= 6 liter"
         },
