@@ -16,7 +16,7 @@
             "C": "70 bar",
             "D": "75 bar",
             "correct": "D",
-            "(5 Liter X ?) : 3 Liter/minuut = 120 minuten → (3 Liter X 120 minuten) / 5 Liter = 72 bar"
+            "correction": "(5 Liter X ?) : 3 Liter/minuut = 120 minuten → (3 Liter X 120 minuten) / 5 Liter = 72 bar"
         },
         {
             "question": "De heer Somers wordt met spoed opgenomen. Er wordt onder andere dehydratatie bij hem geconstateerd. Hij krijgt een infuus. De arts schrijft 2 liter NaCl voor per 24u. Bereken de druppelsnelheid (naar boven afronden).",

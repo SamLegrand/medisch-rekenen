@@ -15,7 +15,7 @@
             "C": "6",
             "D": "5",
             "correct": "B",
-            "10 liter X 150 bar) : ? = 375 minuten → (10 liter X 150 bar) : 375 minuten = 4 liter/minuut"
+            "correction": "10 liter X 150 bar) : ? = 375 minuten → (10 liter X 150 bar) : 375 minuten = 4 liter/minuut"
         },
         {
             "question": "De heer Verhaegen is van zijn motor gevallen. De wonde aan zijn been is gaan ontsteken. Hij heeft een waakinfuus en tussendoor krijgt hij via zijleiding antibiotica. Jij moet deze oplossing (100 ml) laten inlopen over 45 minuten. Wat moet de druppelsnelheid zijn?",
