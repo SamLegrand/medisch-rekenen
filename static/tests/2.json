@@ -1,0 +1,94 @@
+{
+    "questions": [
+        {
+            "question": "Emma een tiener van 18 jaar wil vandaag mee gaan betogen voor het milieu in Brussel. Ze heeft een zuurstofnood van 2 liter per minuut. Ze vertrekt ‘s morgens om 8u45 thuis met een zuurstoffles van 5 liter en een druk van 120 bar. Om wat uur zal haar zuurstoftoevoer stoppen?",
+            "A": "11u45",
+            "B": "12u45",
+            "C": "13u45",
+            "D": "4u45 de volgende dag (20u later)",
+            "correct": "C",
+            "correction": "(5 liter X 120 bar): 2 liter/minuut = 300 minuten  of 5 uur of 13u45"
+        },
+        {
+            "question": "Jarne gaat vandaag naar het ziekenhuis voor een onderzoek. Hij heeft een zuurstoftoevoer van 3 liter per minuut. Hij is 30 minuten onderweg naar het ziekenhuis. In het ziekenhuis duurt het onderzoek een uur. Voor zijn trip heeft hij een zuurstoffles van 5 liter. Hoeveel druk moet er in de zuurstoffles zijn om aan meneer zijn zuurstofnood te voldoen?",
+            "A": "54 bar",
+            "B": "60 bar",
+            "C": "70 bar",
+            "D": "75 bar",
+            "correct": "D",
+            "(5 Liter X ?) : 3 Liter/minuut = 120 minuten → (3 Liter X 120 minuten) / 5 Liter = 72 bar"
+        },
+        {
+            "question": "De heer Somers wordt met spoed opgenomen. Er wordt onder andere dehydratatie bij hem geconstateerd. Hij krijgt een infuus. De arts schrijft 2 liter NaCl voor per 24u. Bereken de druppelsnelheid (naar boven afronden).",
+            "A": "3 druppels per minuut",
+            "B": "15 druppels per minuut",
+            "C": "28 druppels per minuut",
+            "D": "42 druppels per minuut",
+            "correct": "C",
+            "correction": "2 liter = 2000 ml = 2000 x 20 = 40 000 druppels, 24 uur = 24 x 60= 1440 minuten	40 000 druppels / 1440 minuten = 28 druppels per minuut"
+        },
+        {
+            "question": "Vicky krijgt via een waakinfuus 2 liter vocht toegediend per 24 uur via een dialflow. Tegen welke snelheid moet de dialflow dan lopen.",
+            "A": "20%",
+            "B": "10%",
+            "C": "5%",
+            "D": "1%",
+            "correct": "C",
+            "correction": "1000mg in 20 ml -> 50 mg in 1 ml; 50 mg in 1 ml  100 ml = 5000 mg -> 5%"
+        },
+        {
+            "question": "Je hebt Lyorthol 5%. Hiervan moet je 1 liter Lyorthol 1% van maken. Hoeveel ml Lyorthol 5% moet je gebruiken?",
+            "A": "24ml per uur",
+            "B": "34ml per uur",
+            "C": "42ml per uur",
+            "D": "84ml per uur",
+            "correct": "D",
+            "correction": "2000 ml : 24 uur = 84 ml per uur"
+        },
+        {
+            "question": "Bob (een kind van 3 jaar) is tijdelijk opgenomen in het ziekenhuis en krijgt antibiotica 30 ml via een buret infuus. De antibiotica moet binnen 45 minuten ingelopen zijn. Tegen welke druppelsnelheid moet dit inlopen (afronden naar boven)?",
+            "A": "26 druppels per minuut",
+            "B": "54 druppels per minuut",
+            "C": "40 druppels per minuut",
+            "D": "32 druppels per minuut",
+            "correct": "C",
+            "correction": "30ml x 60 = 1800 druppels 		1800 druppels : 45 minuten = 40 druppels per minuut"
+        },
+        {
+            "question": "De heer Verhaegen is van zijn motor gevallen. De wonde aan zijn been is gaan ontsteken. Hij heeft een waakinfuus en tussendoor krijgt hij via zijleiding antibiotica. Jij moet deze oplossing (100 ml) laten inlopen over 45 minuten. Wat moet de druppelsnelheid van het infuus zijn?",
+            "A": "5 druppels per minuut",
+            "B": "15 druppels per minuut",
+            "C": "20 druppels per minuut",
+            "D": "45 druppels per minuut",
+            "correct": "D",
+            "correction": "100ml x 20 = 2000 druppels 		2000 druppels : 45 minuten =  45 druppels per minuut"
+        },
+        {
+            "question": "Je hebt 2 dl glucose oplossing 10%. Hoeveel gram glucose bevat deze oplossing",
+            "A": "1 gram",
+            "B": "2 gram",
+            "C": "10 gram",
+            "D": "20 gram",
+            "correct": "D",
+            "correction": "10% = 10 g per 100 ml oplossing dus 200 ml= 20 gram "
+        },
+        {
+            "question": "Aanwezig is een spuitpomp met daarin een spuit met de volgende oplossing: 8 ml morfine (10 mg/ml) en 42 ml NaCl 0,9%. De spuitpomp staat ingesteld op 5.0 ml per uur. Hoeveel mg morfine heeft de patiënt na 4 uur toegediend gekregen?",
+            "A": "8 mg morfine",
+            "B": "18 mg morfine",
+            "C": "26 mg morfine",
+            "D": "32mg morfine",
+            "correct": "D",
+            "correction": "8 X 10mg = 80mg in de spuit		 80mg/50ml = 1,6 mg/ml 		 1,6 mg/ml X 5ml/u = 8mg per uur 		 8mg/uur X 4 = 32 mg"
+        },
+        {
+            "question": "Stagiaire Cleo spuit 2,8 ml kaliumchloride in maar weet eigenlijk niet hoeveel mg kaliumchloride ze in spuit en wil dit ter controle uitrekenen. De concentratie van de inspuiting is 8mg/2,0 ml",
+            "A": "8,2 mg",
+            "B": "11,2 mg",
+            "C": "13,6 mg",
+            "D": "22,4 mg",
+            "correct": "B",
+            "correction": "8,0mg /2ml= 4mg/ml  		4mg X 2,8ml = 11,2mg"
+        }
+    ]
+}

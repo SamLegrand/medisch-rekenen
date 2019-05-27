@@ -1,0 +1,122 @@
+{
+    "questions": [
+        {
+            "question": "Stijn moet vandaag naar Londen vliegen. Hij is ongeveer 3 uur onderweg en heeft een zuurstofbehoefte van 3 liter per minuut. Hij heeft thuis 2 zuurstofflessen staan. Eén van 5 liter en één van 7,5 liter. Ze hebben elk een druk van 90 bar. Welke fles pakt Stijn best mee?",
+            "A": "5 liter",
+            "B": "6 liter",
+            "C": "7,5 liter", 
+            "correct": "B",
+            "correction": "(? X 90 bar) : 3 Liter /minuut = 3 uur → (180 minuten X 3 Liter/minuut) : 90 bar= 6 liter"
+        },
+        {
+            "question": "Jarne is aan het skiën en heeft een volle zuurstoffles van 10 liter. Deze morgend bevatte de fles een druk van 150 bar. Jarne is al 2 uur op de piste en kan nog 4 uur en 15 minuten verder skiën. Hoeveel bedraagt de zuurstofnood van Jarne in liter per minuut?",
+            "A": "2",
+            "B": "4",
+            "C": "6",
+            "D": "5",
+            "correct": "B",
+            "10 liter X 150 bar) : ? = 375 minuten → (10 liter X 150 bar) : 375 minuten = 4 liter/minuut"
+        },
+        {
+            "question": "De heer Verhaegen is van zijn motor gevallen. De wonde aan zijn been is gaan ontsteken. Hij heeft een waakinfuus en tussendoor krijgt hij via zijleiding antibiotica. Jij moet deze oplossing (100 ml) laten inlopen over 45 minuten. Wat moet de druppelsnelheid zijn?",
+            "A": "5 druppels per minuut",
+            "B": "15 druppels per minuut",
+            "C": "25 druppels per minuut",
+            "D": "45 druppels per minuut",
+            "correct": "D",
+            "correction": "100ml x 20 = 2000 druppels 2000 druppels : 45 minuten =  45 druppels per minuut"
+        },
+        {
+            "question": "Het zij-infuus blijkt al na 20 minuten ingelopen te zijn. Wat was de druppelsnelheid?",
+            "A": "20 druppels per minuut",
+            "B": "65 druppels per minuut",
+            "C": "80 druppels per minuut",
+            "D": "100 druppels per minuut",
+            "correct": "D",
+            "correction": "100ml x 20 = 2000 druppels 2000 : 20 minuten = 100 druppels per minuut"
+        },
+        {
+            "question": "Vicky krijgt via een waakinfuus 2 liter vocht toegediend per 24 uur via een dialflow. Tegen welke snelheid moet de dialflow dan lopen?",
+            "A": "24ml per uur",
+            "B": "34ml per uur",
+            "C": "42ml per uur",
+            "D": "84ml per uur",
+            "correct": "D",
+            "correction": "2000 ml : 24 uur = 84 ml per uur"
+        },
+        {
+            "question": "Jozef is een kind van 6 jaar en is tijdelijk opgenomen in het ziekenhuis en krijgt antibiotica 100ml via een buret infuus. het antibiotica moet binnen 1,5 uur ingelopen zijn. Tegen welke druppelsnelheid moet de antibiotica inlopen?",
+            "A": "55 druppels per minuut",
+            "B": "67 druppels per minuut",
+            "C": "73 druppels per minuut",
+            "D": "80 druppels per minuut",
+            "correct": "B",
+            "correction": "100 ml x 60 = 6000 druppels    6000 druppels : 90 minuten = 67 druppels per minuut"
+        },
+        {
+            "question": "Je moet 100 ml glucoseoplossing 2,5% maken. Hoeveel gram glucose heb je nodig?",
+            "A": "0,025 gram",
+            "B": "0,25 gram",
+            "C": "2,5 gram",
+            "D": "5 gram",
+            "correct": "C",
+            "correction": "2,5% in 100ml = 2,5 gram per 100 ml"
+        },
+        {
+            "question": "Je beschikt over waterperoxide 10%. Je moet 50 ml 0,5% maken. Hoeveel ml waterstofperoxide 10% heb je nodig?",
+            "A": "1 ml waterstofperoxide 10%",
+            "B": "2 ml waterstofperoxide 10%",
+            "C": "2,5 ml waterstofperoxide 10%",
+            "D": "5 ml waterstofperoxide 10%",
+            "correct": "C",
+            "correction": "De verdunningsfactor is 20x (je hebt 50 ml oplossing nodig)  20: 50 = 2,5 ml waterstofperoxide 10%"
+        },
+        {
+            "question": "Met hoeveel ml water moet je dit verdunnen?",
+            "A": "50 ml water",
+            "B": "49 ml water",
+            "C": "47,5 ml water",
+            "D": "45 ml water",
+            "correct": "C",
+            "correction": "47,5 ml water → 50 ml oplossing - 2,5 ml waterstofperoxide 10%"
+        },
+        {
+            "question": "Een patiënt moet per injectie in 24 uur Valproïnezuur 6,5 mg/kg in 2 gelijke doses toegediend krijgen. De patiënt weegt 108 kg. Aanwezig is Valproïnezuur poeder voor injectievloeistof 400 mg op te lossen in 3 ml solvens. Hoeveel ml moet de patiënt per keer toegediend krijgen?",
+            "A": "1,5 ml",
+            "B": "2,1 ml",
+            "C": "2,6 ml",
+            "D": "3,5 ml",
+            "correct": "C",
+            "correction": "108 kg X 6.5 = 702 mg per 24u     702mg /2 = 351mg  → regel van 3  bekomt 133,3 mg/ ml →  351mg :133,3 mg/ml→ 351mg = 2,6 ml"
+        },
+        {
+            "question": "Aanwezig is een spuitpomp met daarin een spuit met de volgende oplossing: 8 ml morfine (10 mg/ml) en 42 ml NaCl 0,9%. De spuitpomp staat ingesteld op 5.0 ml per uur. Hoeveel mg morfine heeft de patiënt na 4 uur toegediend gekregen?",
+            "A": "16 mg",
+            "B": "20 mg",
+            "C": "25 mg",
+            "D": "32 mg",
+            "correct": "D",
+            "correction": "8 X 10mg = 80mg in de spuit    80mg/50ml = 1,6 mg/ml  → 1,6 mg/ml X 5ml/u = 8mg per uur → 8mg/uur X 4 = 32 mg"
+
+        },
+        {
+            "question": "De heer Van Hout heeft een streptokokkeninfectie. Hij wordt daarvoor behandeld met Erythrocine IV. Jij hebt de beschikking over flacons van 1 gram. Voor injectie moet je de inhoud oplossen in steriel water tot 20 ml. Wat is de concentratie van de verkregen oplossing in %?",
+            "A": "5%",
+            "B": "10 %",
+            "C": "15 %",
+            "D": "20 %",
+            "correct": "A",
+            "correction": "1(000m)g in 20 ml  →  5(000m)g in 100ml →   5% "
+
+        },
+        {   
+            "question": "Een patiënt moet 3 keer per dag 5 mg Diazepan IV krijgen. De ampullen (5ml) op de afdeling zijn 2 mg/ml. Hoeveel ml moet je dan inspuiten per keer?",
+            "A": "2 ml",
+            "B": "2,5 ml",
+            "C": "3 ml",
+            "D": "5 ml",
+            "correct": "B",
+            "correction": "5mg : 2mg/ ml = 2,5ml"
+        }
+    ]
+}

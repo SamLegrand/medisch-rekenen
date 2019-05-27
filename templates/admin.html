@@ -58,7 +58,11 @@
                     <p>{{ result['email'] }}</p>
                 </div>
                 <div class="col-3 border">
-                    <p>{{ result['score'] }}</p>
+                    {% if result['passed'] %}
+                    <p class="text-success">{{ result['score'] }}</p>
+                    {% else %}
+                    <p class="text-danger">{{ result['score'] }}</p>
+                    {% endif %}
                 </div>
                 <div class="col-1">
                     <p class="my-auto"><button class="btn btn-light delete-score" value="{{ result['year'] }}-{{ result['username'] }}"><i class="far fa-trash-alt"></i></button></p>
@@ -88,7 +92,11 @@
                     <p>{{ result['email'] }}</p>
                 </div>
                 <div class="col-3 border">
-                    <p>{{ result['score'] }}</p>
+                    {% if result['passed'] %}
+                    <p class="text-success">{{ result['score'] }}</p>
+                    {% else %}
+                    <p class="text-danger">{{ result['score'] }}</p>
+                    {% endif %}
                 </div>
                 <div class="col-1">
                     <p class="my-auto"><button class="btn btn-light delete-score" value="{{ result['year'] }}-{{ result['username'] }}"><i class="far fa-trash-alt"></i></button></p>
@@ -118,7 +126,11 @@
                     <p>{{ result['email'] }}</p>
                 </div>
                 <div class="col-3 border">
-                    <p>{{ result['score'] }}</p>
+                    {% if result['passed'] %}
+                    <p class="text-success">{{ result['score'] }}</p>
+                    {% else %}
+                    <p class="text-danger">{{ result['score'] }}</p>
+                    {% endif %}
                 </div>
                 <div class="col-1">
                     <p class="my-auto"><button class="btn btn-light delete-score" value="{{ result['year'] }}-{{ result['username'] }}"><i class="far fa-trash-alt"></i></button></p>
@@ -148,7 +160,11 @@
                     <p>{{ result['email'] }}</p>
                 </div>
                 <div class="col-3 border">
-                    <p>{{ result['score'] }}</p>
+                    {% if result['passed'] %}
+                    <p class="text-success">{{ result['score'] }}</p>
+                    {% else %}
+                    <p class="text-danger">{{ result['score'] }}</p>
+                    {% endif %}
                 </div>
                 <div class="col-1">
                     <p class="my-auto"><button class="btn btn-light delete-score" value="{{ result['year'] }}-{{ result['username'] }}"><i class="far fa-trash-alt"></i></button></p>
@@ -162,4 +178,3 @@
     <hr>
 </div>
 {% endblock %}
-   

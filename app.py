@@ -216,6 +216,11 @@ def api_delete_failed():
 ## Routes ##
 @app.route('/')
 def render_home():
+    if 'username' in session:
+        if session['username'] == 'admin':
+            return redirect('/admin')
+        else:
+            return redirect('/evaluation')
     return render_template('index.html', session=session)
 
 @app.route('/admin')
@@ -234,13 +239,13 @@ def render_admin():
                 response[i]['email'] = answer[i][1]
                 response[i]['year'] = answer[i][2]
                 response[i]['score'] = answer[i][3]
+                response[i]['passed'] = (int(answer[i][3][0])/int(answer[i][3][-1]) >= 0.7)
 
             return render_template('admin.html', session=session, results=response)
     return redirect('/')
 
 @app.route('/evaluation')
 def render_evaluation():
-
     if 'username' in session:
         if session['username'] != 'admin':
             if 'current' in session:
