@@ -56,6 +56,7 @@ $(document).ready(function(){
     }
     
     function renderScore() {
+        $('.spinner-border').removeClass('d-none');
         $.ajax({
             url: '/api/get_score',
             type: 'GET',
@@ -63,6 +64,8 @@ $(document).ready(function(){
             success: function(response) {
                 if (response.Status === "Success") {
                     $('#scoreCard').find('h5').html('U behaalde ' + response.Value);
+                    $('#evaluation').slideUp();
+                    $('#scoreCard').slideDown();
                 }
                 else if (response.Status === "Error") {
                     console.log("Error");
@@ -72,8 +75,6 @@ $(document).ready(function(){
                 console.log(error);
             }
         });
-        $('#evaluation').slideUp();
-        $('#scoreCard').slideDown();
     }
     
     function startTest() {
