@@ -128,7 +128,8 @@ $(document).ready(function(){
                 else if (response.Status === "Incorrect") {
                     choice.parent().find('p').css('color', 'red');
                     $('#' + response.Correct).parent().find('p').css('color', 'green');
-                    $('#correction').html(response.Correction);
+                    correction = response.Correction.map(i => i.replace(/\n/g, '<br />'))
+                    $('#correction').html(correction);
                 }
                 else {
                     window.location.href = "/evaluation";

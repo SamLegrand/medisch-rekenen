@@ -25,7 +25,7 @@
             "C": "20 gram",
             "D": "1 gram",
             "correct": "C",
-            "correction": "2 dl = 200 ml   10% = 10 g per 100 ml oplossing  20 gram"
+            "correction": "2 dl = 200 ml\n10% = 10 g per 100 ml oplossing → 20 gram"
         },
         {
             "question": "De heer Van Hout heeft een streptokokkeninfectie. Hij wordt daarvoor behandeld met Erythrocine IV. Jij hebt de beschikking over flacons van 1 gram. Voor injectie moet je de inhoud oplossen in steriel water tot 20 ml. Wat is de concentratie van de verkregen oplossing in %?",
@@ -34,7 +34,7 @@
             "C": "5%",
             "D": "1%",
             "correct": "C",
-            "correction": "1000mg in 20 ml -> 50 mg in 1 ml; 50 mg in 1 ml  100 ml = 5000 mg -> 5%"
+            "correction": "1000mg in 20 ml → 50 mg in 1 ml\n50 mg in 1 ml → 100 ml = 5000 mg → 5%"
         },
         {
             "question": "Je hebt Lyorthol 5%. Hiervan moet je 1 liter Lyorthol 1% van maken. Hoeveel ml Lyorthol 5% moet je gebruiken?",
@@ -43,7 +43,7 @@
             "C": "200 ml Lyorthol 5%",
             "D": "500 ml Lyorthol 5%",
             "correct": "C",
-            "correction": "5% -> 1% = /5; 1000ml /5 = 200ml lyorthol 5%"
+            "correction": "5% → 1% = /5\n1000ml /5 = 200ml lyorthol 5%"
         },
         {
             "question": "Hoeveel ml water moet je toevoegen?",
@@ -52,7 +52,7 @@
             "C": "950 ml water",
             "D": "990 ml water",
             "correct": "B",
-            "correction": "1000ml- 200ml = 800ml"
+            "correction": "1000ml - 200ml = 800ml"
         },
         {
             "question": "Een patiënt moet 3 keer per dag 5 mg Diazepan IV krijgen. De ampullen (5ml) op de afdeling zijn 2 mg/ml. Hoeveel ml moet je dan inspuiten per keer?",
@@ -61,7 +61,7 @@
             "C": "9u-18u- 23u",
             "D": "6u-12u-20u",
             "correct": "A",
-            "correction": "24/3 = 8 -> om de 8 uur "
+            "correction": "24/3 = 8 → om de 8 uur"
         },
         {
             "question": "Florke heeft al sinds enkele jaren 7 liter zuurstof per minuut nodig. Hij moet vandaag naar radiologie voor een RX van zijn hand. Florke vertrekt thuis met zijn zuurstoffles van 7,5 liter zuurstof, de zuurstof staat onder een druk van 96 bar. Kan hij met deze zuurstoffles anderhalf uur wegblijven?",
@@ -79,7 +79,7 @@
             "C": "10",
             "D": "45",
             "correct": "B",
-            "correction": "45/10 = 4,5 -> 5 flacons"
+            "correction": "45/10 = 4,5 → 5 flacons"
         },
         {
             "question": "Een patiënt moet per injectie in 24 uur Valproïnezuur 10 mg/kg in 2 gelijke doses toegediend krijgen. De patiënt weegt 72 kg. Aanwezig is Valproïnezuur poeder voor injectievloeistof 400 mg op te lossen in 4 ml solvens. Hoeveel ml moet de patiënt per keer toegediend krijgen? ",
@@ -88,7 +88,7 @@
             "C": "7,20 ml",
             "D": "10 ml",
             "correct": "B",
-            "correction": "72kg x 10mg/kg = 720mg per 24uur; 720mg / 2 = 360mg; Regel van 3: 400mg in 4ml -> 100mg in 1ml --> 360mg in 3,6ml"
+            "correction": "72kg x 10mg/kg = 720mg per 24uur\n720mg / 2 = 360mg\nRegel van 3: 400mg in 4ml → 100mg in 1ml → 360mg in 3,6ml"
         }
     ]
 }

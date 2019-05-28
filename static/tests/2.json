@@ -25,7 +25,7 @@
             "C": "28 druppels per minuut",
             "D": "42 druppels per minuut",
             "correct": "C",
-            "correction": "2 liter = 2000 ml = 2000 x 20 = 40 000 druppels, 24 uur = 24 x 60= 1440 minuten\t40 000 druppels / 1440 minuten = 28 druppels per minuut"
+            "correction": "2 liter = 2000 ml = 2000 x 20 = 40 000 druppels, 24 uur = 24 x 60= 1440 minuten\n40 000 druppels / 1440 minuten = 28 druppels per minuut"
         },
         {
             "question": "Vicky krijgt via een waakinfuus 2 liter vocht toegediend per 24 uur via een dialflow. Tegen welke snelheid moet de dialflow dan lopen.",
@@ -34,7 +34,7 @@
             "C": "5%",
             "D": "1%",
             "correct": "C",
-            "correction": "1000mg in 20 ml -> 50 mg in 1 ml; 50 mg in 1 ml  100 ml = 5000 mg -> 5%"
+            "correction": "1000mg in 20 ml → 50 mg in 1 ml\n50 mg in 1 ml → 100 ml = 5000 mg → 5%"
         },
         {
             "question": "Je hebt Lyorthol 5%. Hiervan moet je 1 liter Lyorthol 1% van maken. Hoeveel ml Lyorthol 5% moet je gebruiken?",
@@ -52,7 +52,7 @@
             "C": "40 druppels per minuut",
             "D": "32 druppels per minuut",
             "correct": "C",
-            "correction": "30ml x 60 = 1800 druppels\t\t1800 druppels : 45 minuten = 40 druppels per minuut"
+            "correction": "30ml x 60 = 1800 druppels\n1800 druppels : 45 minuten = 40 druppels per minuut"
         },
         {
             "question": "De heer Verhaegen is van zijn motor gevallen. De wonde aan zijn been is gaan ontsteken. Hij heeft een waakinfuus en tussendoor krijgt hij via zijleiding antibiotica. Jij moet deze oplossing (100 ml) laten inlopen over 45 minuten. Wat moet de druppelsnelheid van het infuus zijn?",
@@ -61,7 +61,7 @@
             "C": "20 druppels per minuut",
             "D": "45 druppels per minuut",
             "correct": "D",
-            "correction": "100ml x 20 = 2000 druppels\t\t2000 druppels : 45 minuten =  45 druppels per minuut"
+            "correction": "100ml x 20 = 2000 druppels\n2000 druppels : 45 minuten =  45 druppels per minuut"
         },
         {
             "question": "Je hebt 2 dl glucose oplossing 10%. Hoeveel gram glucose bevat deze oplossing",
@@ -79,7 +79,7 @@
             "C": "26 mg morfine",
             "D": "32mg morfine",
             "correct": "D",
-            "correction": "8 X 10mg = 80mg in de spuit\t\t80mg/50ml = 1,6 mg/ml\t\t1,6 mg/ml X 5ml/u = 8mg per uur\t\t8mg/uur X 4 = 32 mg"
+            "correction": "8 X 10mg = 80mg in de spuit\n80mg/50ml = 1,6 mg/ml\n1,6 mg/ml X 5ml/u = 8mg per uur\n8mg/uur X 4 = 32 mg"
         },
         {
             "question": "Stagiaire Cleo spuit 2,8 ml kaliumchloride in maar weet eigenlijk niet hoeveel mg kaliumchloride ze in spuit en wil dit ter controle uitrekenen. De concentratie van de inspuiting is 8mg/2,0 ml",
@@ -88,7 +88,7 @@
             "C": "13,6 mg",
             "D": "22,4 mg",
             "correct": "B",
-            "correction": "8,0mg /2ml= 4mg/ml\t\t4mg X 2,8ml = 11,2mg"
+            "correction": "8,0mg /2ml= 4mg/ml\n4mg X 2,8ml = 11,2mg"
         }
     ]
 }
