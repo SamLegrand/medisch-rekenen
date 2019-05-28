@@ -128,7 +128,7 @@ $(document).ready(function(){
                 else if (response.Status === "Incorrect") {
                     choice.parent().find('p').css('color', 'red');
                     $('#' + response.Correct).parent().find('p').css('color', 'green');
-                    correction = response.Correction.map(i => i.replace(/\n/g, '<br />'))
+                    correction = response.Correction.replace(/\n/g, '<br />');
                     $('#correction').html(correction);
                 }
                 else {
