@@ -46,16 +46,7 @@
             "correction": "5% → 1% = /5\n1000ml /5 = 200ml lyorthol 5%"
         },
         {
-            "question": "Hoeveel ml water moet je toevoegen?",
-            "A": "500 ml water",
-            "B": "800 ml water",
-            "C": "950 ml water",
-            "D": "990 ml water",
-            "correct": "B",
-            "correction": "1000ml - 200ml = 800ml"
-        },
-        {
-            "question": "Een patiënt moet 3 keer per dag 5 mg Diazepan IV krijgen. De ampullen (5ml) op de afdeling zijn 2 mg/ml. Hoeveel ml moet je dan inspuiten per keer?",
+            "question": "Jordi is tijdens zijn stage aangereden door een bed en heeft zeer veel pijn aan zijn voet. Hij krijgt hiervoor Ibuprofen. Dit mag hij slechts 3 keer per dag innemen na ongeveer hetzelfde tijdsinterval. Welke van volgende schema's is een correcte verspreiding?",
             "A": "7u-15u-23u",
             "B": "8u-12u- 16u",
             "C": "9u-18u- 23u",
@@ -64,7 +55,7 @@
             "correction": "24/3 = 8 → om de 8 uur"
         },
         {
-            "question": "Florke heeft al sinds enkele jaren 7 liter zuurstof per minuut nodig. Hij moet vandaag naar radiologie voor een RX van zijn hand. Florke vertrekt thuis met zijn zuurstoffles van 7,5 liter zuurstof, de zuurstof staat onder een druk van 96 bar. Kan hij met deze zuurstoffles anderhalf uur wegblijven?",
+            "question": "Een patiënt moet 3 keer per dag 5 mg Diazepan IV krijgen. De ampullen (5ml) op de afdeling zijn 2 mg/ml. Hoeveel ml moet je dan inspuiten per keer?",
             "A": "2ml",
             "B": "2,5ml",
             "C": "3ml",

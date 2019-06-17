@@ -1,20 +1,20 @@
 {
     "questions": [
         {
-            "question": "Stijn moet vandaag naar Londen vliegen. Hij is ongeveer 3 uur onderweg en heeft een zuurstofbehoefte van 3 liter per minuut. Hij heeft thuis 2 zuurstofflessen staan. Eén van 5 liter en één van 7,5 liter. Ze hebben elk een druk van 90 bar. Welke fles pakt Stijn best mee?",
-            "A": "5 liter",
-            "B": "6 liter",
-            "C": "7,5 liter",
-            "D": "8 liter",
+            "question": "Stijn moet vandaag naar Londen vliegen. Hij is ongeveer 3 uur onderweg en heeft een zuurstofbehoefte van 3 liter per minuut. Hij heeft thuis enkele zuurstofflessen staan, met elk een druk van 90 bar. Welke van volgende flessen neemt Stijn best mee?",
+            "A": "1 liter",
+            "B": "3 liter",
+            "C": "5 liter",
+            "D": "7,5 liter",
             "correct": "B",
             "correction": "(? X 90 bar) : 3 Liter /minuut = 3 uur → (180 minuten X 3 Liter/minuut) : 90 bar= 6 liter"
         },
         {
             "question": "Jarne is aan het skiën en heeft een volle zuurstoffles van 10 liter. Deze morgend bevatte de fles een druk van 150 bar. Jarne is al 2 uur op de piste en kan nog 4 uur en 15 minuten verder skiën. Hoeveel bedraagt de zuurstofnood van Jarne in liter per minuut?",
-            "A": "2",
-            "B": "4",
-            "C": "6",
-            "D": "5",
+            "A": "2 liter per minuut",
+            "B": "4 liter per minuut",
+            "C": "6 liter per minuut",
+            "D": "5 liter per minuut",
             "correct": "B",
             "correction": "10 liter X 150 bar) : ? = 375 minuten → (10 liter X 150 bar) : 375 minuten = 4 liter/minuut"
         },
@@ -26,15 +26,6 @@
             "D": "45 druppels per minuut",
             "correct": "D",
             "correction": "100ml x 20 = 2000 druppels 2000 druppels : 45 minuten =  45 druppels per minuut"
-        },
-        {
-            "question": "Het zij-infuus blijkt al na 20 minuten ingelopen te zijn. Wat was de druppelsnelheid?",
-            "A": "20 druppels per minuut",
-            "B": "65 druppels per minuut",
-            "C": "80 druppels per minuut",
-            "D": "100 druppels per minuut",
-            "correct": "D",
-            "correction": "100ml x 20 = 2000 druppels 2000 : 20 minuten = 100 druppels per minuut"
         },
         {
             "question": "Vicky krijgt via een waakinfuus 2 liter vocht toegediend per 24 uur via een dialflow. Tegen welke snelheid moet de dialflow dan lopen?",
@@ -71,15 +62,6 @@
             "D": "5 ml waterstofperoxide 10%",
             "correct": "C",
             "correction": "De verdunningsfactor is 20x (je hebt 50 ml oplossing nodig)  20: 50 = 2,5 ml waterstofperoxide 10%"
-        },
-        {
-            "question": "Met hoeveel ml water moet je dit verdunnen?",
-            "A": "50 ml water",
-            "B": "49 ml water",
-            "C": "47,5 ml water",
-            "D": "45 ml water",
-            "correct": "C",
-            "correction": "47,5 ml water → 50 ml oplossing - 2,5 ml waterstofperoxide 10%"
         },
         {
             "question": "Een patiënt moet per injectie in 24 uur Valproïnezuur 6,5 mg/kg in 2 gelijke doses toegediend krijgen. De patiënt weegt 108 kg. Aanwezig is Valproïnezuur poeder voor injectievloeistof 400 mg op te lossen in 3 ml solvens. Hoeveel ml moet de patiënt per keer toegediend krijgen?",

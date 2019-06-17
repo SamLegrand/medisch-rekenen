@@ -29,21 +29,21 @@
         },
         {
             "question": "Vicky krijgt via een waakinfuus 2 liter vocht toegediend per 24 uur via een dialflow. Tegen welke snelheid moet de dialflow dan lopen.",
-            "A": "20%",
-            "B": "10%",
-            "C": "5%",
-            "D": "1%",
-            "correct": "C",
-            "correction": "1000mg in 20 ml → 50 mg in 1 ml\n50 mg in 1 ml → 100 ml = 5000 mg → 5%"
+            "A": "24 ml per uur",
+            "B": "34 ml per uur",
+            "C": "42 ml per uur",
+            "D": "84 ml per uur",
+            "correct": "D",
+            "correction": "2000 ml / 24 uur = 84 ml per uur"
         },
         {
-            "question": "Je hebt Lyorthol 5%. Hiervan moet je 1 liter Lyorthol 1% van maken. Hoeveel ml Lyorthol 5% moet je gebruiken?",
-            "A": "24ml per uur",
-            "B": "34ml per uur",
-            "C": "42ml per uur",
-            "D": "84ml per uur",
-            "correct": "D",
-            "correction": "2000 ml : 24 uur = 84 ml per uur"
+            "question": "De heer Van Hout heeft een streptokokkeninfectie. Hij wordt daarvoor behandeld met Erythrocine IV. Jij hebt de beschikking over flacons van 1 gram. Voor injectie moet je de inhoud oplossen in steriel water tot 20 ml. Wat is de concentratie van de verkregen oplossing in %?",
+            "A": "5%",
+            "B": "10%",
+            "C": "15%",
+            "D": "20%",
+            "correct": "A",
+            "correction": "1(000m)g in 20 ml → 5(000m)g in 100 ml → 5%"
         },
         {
             "question": "Bob (een kind van 3 jaar) is tijdelijk opgenomen in het ziekenhuis en krijgt antibiotica 30 ml via een buret infuus. De antibiotica moet binnen 45 minuten ingelopen zijn. Tegen welke druppelsnelheid moet dit inlopen (afronden naar boven)?",
