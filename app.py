@@ -5,13 +5,12 @@ import psycopg2
 import smtplib
 from email import message
 import math
-from datetime import datetime
 import re
 import json
 import os
 
 DATABASE_URL = os.environ['DATABASE_URL']
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+conn = psycopg2.connect(DATABASE_URL)
 conn.set_session(readonly=False, autocommit=True)
 
 app = Flask(__name__)
@@ -71,7 +70,7 @@ def results_exist():
     exists_query = '''
         SELECT exists (
             SELECT 1
-            FROM Resultaten
+            FROM resultaten
             WHERE username = %s and year = %s
         )'''
     cur = conn.cursor()
@@ -132,7 +131,7 @@ def api_check_exists():
     exists_query = '''
             SELECT exists (
                 SELECT 1
-                FROM Resultaten
+                FROM resultaten
                 WHERE username = %s and year = %s
             )'''
     cur = conn.cursor()
