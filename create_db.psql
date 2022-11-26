@@ -1,0 +1,1 @@
+CREATE TABLE resultaten(email VARCHAR,score VARCHAR,username VARCHAR,year int4,PRIMARY KEY( username, year ));
