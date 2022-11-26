@@ -77,6 +77,29 @@ def results_exist():
     cur.execute(exists_query, (session['username'], session['year'],))
     return cur.fetchone()[0]
 
+
+def send_result_email(session, score, status):
+    from_addr = 'rekenmore@gmail.com'
+    to_addr = session['email']
+    subject = 'Bevestiging resultaat medisch rekenen'
+    body = 'Bevestiging van uw resultaat \'evaluatie medisch rekenen\':\n' \
+            'Studentennummer: ' + session['username'] + '\n' \
+            'Jaar: ' + session['year'] + '\n' \
+            'Status: ' + status + '\n' \
+            'Score: ' + str(score) + "/" + str(len(input['questions']))
+
+    msg = message.Message()
+    msg.add_header('from', from_addr)
+    msg.add_header('to', to_addr)
+    msg.add_header('subject', subject)
+    msg.set_payload(body)
+
+    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    server.ehlo()
+    server.login(from_addr, 'topsport123')
+    server.send_message(msg, from_addr=from_addr, to_addrs=[to_addr])
+    server.close()
+
 # Receive score and put it in DataBase (if it does not yet exist)
 @app.route('/api/get_score')
 def api_get_score():
@@ -99,26 +122,7 @@ def api_get_score():
         if score >= math.ceil(0.7 * len(input['questions'])):
             status = "Geslaagd"
 
-        from_addr = 'rekenmore@gmail.com'
-        to_addr = session['email']
-        subject = 'Bevestiging resultaat medisch rekenen'
-        body = 'Bevestiging van uw resultaat \'evaluatie medisch rekenen\':\n' \
-               'Studentennummer: ' + session['username'] + '\n' \
-               'Jaar: ' + session['year'] + '\n' \
-               'Status: ' + status + '\n' \
-               'Score: ' + str(score) + "/" + str(len(input['questions']))
-
-        msg = message.Message()
-        msg.add_header('from', from_addr)
-        msg.add_header('to', to_addr)
-        msg.add_header('subject', subject)
-        msg.set_payload(body)
-
-        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-        server.ehlo()
-        server.login(from_addr, 'topsport123')
-        server.send_message(msg, from_addr=from_addr, to_addrs=[to_addr])
-        server.close()
+        # send_result_email(session, score, status)
 
         session.clear()
         return json.dumps({"Status": "Success", "Value": str(score) + "/" + str(len(input['questions']))})
@@ -227,7 +231,7 @@ def render_admin():
     if 'username' in session:
         if session['username'] == 'admin':
             cur = conn.cursor()
-            query = "SELECT * FROM resultaten " \
+            query = "SELECT username, email, year, score FROM resultaten " \
                     "ORDER BY username"
             cur.execute(query, ())
             answer = cur.fetchall()
